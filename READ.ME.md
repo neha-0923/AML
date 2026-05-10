@@ -1,7 +1,7 @@
 # Applied Machine Learning (EEEM068)
 ## MSCTD Multimodal Sentiment Analysis
 
-**Module:** EEEM068 Applied Machine Learning — University of Surrey  
+**Module:** EEEM068 Applied Machine Learning | University of Surrey  
 **Dataset:** MSCTD (Multimodal Sentiment Analysis in Code-Switching Dialogues)  
 **Task:** 3-class sentiment classification — Neutral (0) / Negative (1) / Positive (2)
 
