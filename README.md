@@ -28,7 +28,7 @@ This project implements a multimodal sentiment analysis system that classifies i
 ├── requirements.txt                                    # Python dependencies
 ├── README.md                                           # This file
 └── report/
-    └── HAR_15195_Report.pdf                           # 5-page IEEE report (submit separately)
+    └── Report.pdf                           # 5-page IEEE report (submit separately)
 
 
 ---
@@ -145,11 +145,11 @@ Download these from Colab using the Files panel before the session ends.
 See [requirements.txt](requirements.txt) for the full list. Core dependencies:
 
 - torch / torchvision (CUDA 12.1)
-- mtcnn — face detection
-- albumentations — image augmentation
-- scikit-learn — metrics
-- Pillow==10.4.0 — image I/O (pinned for compatibility)
-- gdown — Google Drive downloads
+- mtcnn  face detection
+- albumentations  image augmentation
+- scikit-learn  metrics
+- Pillow==10.4.0  image I/O (pinned for compatibility)
+- gdown  Google Drive downloads
 
 ---
 
