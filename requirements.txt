@@ -1,0 +1,48 @@
+# ============================================================
+# EEEM068: Applied Machine Learning — Human Sentiment Analysis
+# Python dependencies
+#
+# Install via:
+#   pip install -r requirements.txt
+#
+# For Google Colab with CUDA 12.1, Cell 1 of the notebook
+# handles installation automatically.
+# ============================================================
+
+# ── Core ML / Deep Learning ─────────────────────────────────
+torch==2.3.0
+torchvision==0.18.0
+torchaudio==2.3.0
+
+# ── Image I/O (pinned for mtcnn / facenet compatibility) ────
+Pillow==10.4.0
+
+# ── Face Detection ───────────────────────────────────────────
+mtcnn==0.1.1
+
+# ── Image Augmentation ───────────────────────────────────────
+albumentations==1.4.10
+
+# ── Scientific Computing ─────────────────────────────────────
+numpy>=1.24.0
+scipy>=1.11.0
+
+# ── Machine Learning Metrics ─────────────────────────────────
+scikit-learn>=1.3.0
+
+# ── Visualisation ────────────────────────────────────────────
+matplotlib>=3.7.0
+seaborn>=0.13.0
+
+# ── Progress Bars ────────────────────────────────────────────
+tqdm>=4.66.0
+
+# ── Dataset Download ─────────────────────────────────────────
+gdown>=5.1.0
+
+# ── Jupyter Notebook ─────────────────────────────────────────
+jupyter>=1.0.0
+ipykernel>=6.25.0
+
+# ── Optional: OpenCV (fallback image reader in dataset class) 
+opencv-python-headless>=4.8.0
