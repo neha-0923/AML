@@ -24,7 +24,7 @@ This project implements a multimodal sentiment analysis system that classifies i
 
 
 .
-├── HAR_15195_Applied_Machine_Learning_EEEM068.ipynb   # Main notebook (all 4 parts)
+├── Applied_Machine_Learning_EEEM068.ipynb   # Main notebook (all 4 parts)
 ├── requirements.txt                                    # Python dependencies
 ├── README.md                                           # This file
 └── report/
@@ -69,7 +69,7 @@ source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # Launch Jupyter
-jupyter notebook HAR_15195_Applied_Machine_Learning_EEEM068.ipynb
+jupyter notebook Applied_Machine_Learning_EEEM068.ipynb
 
 
 > A CUDA-capable GPU is strongly recommended for training. CPU-only execution is possible but will be very slow.
@@ -115,11 +115,11 @@ A summary table of all results is printed in *Cell 20*.
 
 | Model | Test Accuracy | Macro F1 |
 |-------|:---:|:---:|
-| Part 1 — Face Model | — | — |
-| Part 2 — Robust Model (Clean) | — | — |
-| Part 2 — Robust Model (Degraded) | — | — |
-| Part 3 — Full Image (ResNet-50) | — | — |
-| Part 4 — Fusion Model | — | — |
+| Part 1  Face Model | — | — |
+| Part 2  Robust Model (Clean) | — | — |
+| Part 2  Robust Model (Degraded) | — | — |
+| Part 3  Full Image (ResNet-50) | — | — |
+| Part 4  Fusion Model | — | — |
 
 > Fill in values after running the notebook.
 
@@ -168,11 +168,11 @@ random.seed(42)
 
 | Name | URN |
 |------|-----|
-| | |
-| | |
-| | |
-| | |
-| | |
+|Likhitha Reddy |6956685 |
+|Neha Madhava Sundhram |6957792 |
+|Pramodh Rahul Gullipalli |6964218 |
+|Harshitha | |
+|Malli | |
 
 ---
 
