@@ -36,7 +36,7 @@ The pipeline covers:
 
 ## How to Use
 
-The main implementation is in `New_main_FINAL_v2.ipynb`. Open it in Google Colab and run cells in order:
+The main implementation is in `APPLIED_ML.ipynb`. Open it in Google Colab and run cells in order:
 
 1. **Cell 1** — Install packages (restart runtime after)
 2. **Cell 2** — Imports and global config
