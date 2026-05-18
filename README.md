@@ -1,22 +1,19 @@
-# EEEM068: Applied Machine Learning — Human Sentiment Analysis
+# EEEM068: Applied Machine Learning - Human Sentiment Analysis
 
-**University of Surrey | Institute for People-Centred AI | Spring Term 2026**
+**University of Surrey **
 
----
 
 ## Overview
 
 This project implements a multimodal sentiment analysis system that classifies images into three sentiment categories — **Neutral**, **Negative**, and **Positive** — using the English-German (En-De) split of the MSCTD Dataset. The pipeline covers four main parts plus an extra-credit multimodal Transformer extension.
 
 | Part | Description |
-|------|-------------|
 | Part 1 | Face-based sentiment classification using MTCNN + EfficientNet-B2 |
 | Part 2 | Data augmentation & robustness evaluation (clean vs. degraded images) |
 | Part 3 | Full-image transfer learning with frozen EfficientNet-B3 backbone |
 | Part 4 | Attention fusion model combining face and full-image predictions |
 | Extra Credit | Multimodal Transformer fine-tuning (CLIP + BERT) |
 
----
 
 ## Repository Structure
 
@@ -50,7 +47,6 @@ This project implements a multimodal sentiment analysis system that classifies i
 └── requirements.txt                        # Python dependencies
 ```
 
----
 
 ## Dataset
 
@@ -103,29 +99,29 @@ jupyter notebook main_file/APPLIED_ML_revised.ipynb
 
 ## Model Architectures
 
-### Part 1 — Face Sentiment Model
+### Part 1 - Face Sentiment Model
 - **Backbone:** EfficientNet-B2 (ImageNet pre-trained, last 3 blocks unfrozen)
 - **Head:** MLP (1408 → 512 → 128 → 3) with BatchNorm and Dropout
 - **Face detector:** MTCNN
 - **Multi-face strategy:** Confidence-weighted softmax averaging
 - **No-face fallback:** Training set class prior
 
-### Part 2 — Robust Face Model
+### Part 2 - Robust Face Model
 - Same architecture as Part 1, retrained on a 50/50 mix of clean and degraded images
 - **Degradation pipeline:** FFT frequency noise + Gaussian noise + JPEG compression + brightness/contrast jitter + random rotation (via Albumentations)
 
-### Part 3 — Full Image Model
+### Part 3 - Full Image Model
 - **Backbone:** EfficientNet-B3 (ImageNet pre-trained, initially frozen)
 - **Head:** MLP (1536 → 512 → 128 → 3) with Dropout
 - **Loss:** Focal loss (γ=2) with class weights
 - **Inference:** Test-time augmentation (TTA × 3)
 
-### Part 4 — Attention Fusion Model
+### Part 4 - Attention Fusion Model
 - **Input:** 10-dim vector = face softmax (3) + full-image softmax (3) + face-count one-hot (4)
 - **Fusion:** Attention gate (sigmoid MLP mask) learns which stream to trust
 - Trained for 100 epochs with AdamW and focal loss
 
-### Extra Credit — Multimodal Transformer (CLIP + BERT)
+### Extra Credit - Multimodal Transformer (CLIP + BERT)
 - **Vision:** CLIP ViT-B/32 — last 2 encoder layers unfrozen
 - **Text:** BERT-base-uncased — last 2 encoder layers unfrozen
 - **Fusion:** Cross-attention (image queries text) + residual LayerNorm → classifier
@@ -145,34 +141,34 @@ All models are evaluated on the test split using:
 
 ## Results
 
-### Part 1 — Face Model (EfficientNet-B2)
+### Part 1 - Face Model (EfficientNet-B2)
 
 ![Part 1 Classification Report](results/screenshots/part1_face_report.png)
 ![Part 1 Confusion Matrix & ROC](results/screenshots/part1_face_cm_roc.png)
 
 ---
 
-### Part 2 — Robustness (Clean vs Degraded)
+### Part 2 - Robustness (Clean vs Degraded)
 
 ![Part 2 Clean vs Degraded](results/screenshots/part2_clean_vs_degraded.png)
 
 ---
 
-### Part 3 — Full Image Model (EfficientNet-B3)
+### Part 3 - Full Image Model (EfficientNet-B3)
 
 ![Part 3 Classification Report](results/screenshots/part3_fullimage_report.png)
 ![Part 3 Confusion Matrix & ROC](results/screenshots/part3_fullimage_cm_roc.png)
 
 ---
 
-### Part 4 — Fusion Model
+### Part 4 - Fusion Model
 
 ![Part 4 Classification Report](results/screenshots/part4_fusion_report.png)
 ![Part 4 Confusion Matrix & ROC](results/screenshots/part4_fusion_cm_roc.png)
 
 ---
 
-### Extra Credit — Multimodal Transformer (CLIP + BERT)
+### Extra Credit - Multimodal Transformer (CLIP + BERT)
 
 **Test Accuracy: 60.31% | Macro F1: 0.5865**
 
@@ -192,11 +188,11 @@ All trained model weights are saved to `/content/` during training on Colab:
 
 | File | Description |
 |------|-------------|
-| `face_model.pth` | Part 1 — face sentiment model |
-| `face_model_robust.pth` | Part 2 — mixed-trained robust model |
-| `full_image_model.pth` | Part 3 — EfficientNet-B3 model |
-| `fusion_model.pth` | Part 4 — attention fusion model |
-| `multimodal_model.pth` | Extra credit — CLIP+BERT model |
+| `face_model.pth` | Part 1 - face sentiment model |
+| `face_model_robust.pth` | Part 2 - mixed-trained robust model |
+| `full_image_model.pth` | Part 3 - EfficientNet-B3 model |
+| `fusion_model.pth` | Part 4 - attention fusion model |
+| `multimodal_model.pth` | Extra credit - CLIP+BERT model |
 
 > Download these from Colab via the Files panel before the session ends, or mount Google Drive to save automatically.
 
@@ -207,13 +203,13 @@ All trained model weights are saved to `/content/` during training on Colab:
 See `requirements.txt` for the full list. Core dependencies:
 
 - `torch` / `torchvision` (CUDA 12.1)
-- `timm` — EfficientNet backbones
-- `transformers` — CLIP and BERT (extra credit)
-- `mtcnn` — face detection
-- `albumentations` — image augmentation
-- `scikit-learn` — evaluation metrics
-- `Pillow==10.4.0` — image I/O (pinned for compatibility)
-- `gdown` — Google Drive downloads
+- `timm` - EfficientNet backbones
+- `transformers` - CLIP and BERT (extra credit)
+- `mtcnn` - face detection
+- `albumentations` - image augmentation
+- `scikit-learn` - evaluation metrics
+- `Pillow==10.4.0` - image I/O (pinned for compatibility)
+- `gdown` - Google Drive downloads
 
 ---
 
@@ -236,8 +232,8 @@ random.seed(42)
 | Likhitha Reddy | 6956685 |
 | Neha Madhava Sundhram | 6957792 |
 | Pramodh Rahul Gullipalli | 6964218 |
-| Harshitha | — |
-| Malli | — |
+| Harshita Rajeev | 6959073  | 
+| Malli Chowdary | 6834918 |
 
 ---
 
